@@ -50,7 +50,7 @@ router.post('/', function (req, res, next) {
     }
 
     // 上一次登录和最近登录时间
-    model.update({
+    model.updateOne({
       _id: result._id
     }, {
       "$set": {
