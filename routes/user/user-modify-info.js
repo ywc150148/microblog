@@ -66,7 +66,7 @@ router.post('/', function (req, res, next) {
       return res.redirect('/modifyinfo');
     }
 
-    model.update({
+    model.updateOne({
       name: name
     }, {
       "$set": {
