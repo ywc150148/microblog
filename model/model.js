@@ -103,9 +103,9 @@ model.prototype.find = function (obj, callback) {
 }
 
 // 修改数据
-model.prototype.update = function (old, newobj, callback) {
+model.prototype.updateOne = function (old, newobj, callback) {
     // User.update({ userName: "oldname" }, { "$set": { userName: "newname" } }, function (err, doc) {});
-    userModel.update(old, newobj, function (err, result) {
+    userModel.updateOne(old, newobj, function (err, result) {
         return callback(err, result);
     });
 }
