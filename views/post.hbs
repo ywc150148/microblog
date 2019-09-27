@@ -1,0 +1,55 @@
+<div class="page-header">
+    <h1>发消息</h1>
+</div>
+
+<form role="form" method="POST">
+    <div class="form-group">
+        <label for="name">发送微博</label>
+        <textarea class="form-control" rows="3" name="post"></textarea>
+    </div>
+    <div class="form-group clearfix">
+        <div class="pull-right">
+            <button type="submit" class="btn btn-success">发送</button>
+        </div>
+    </div>
+</form>
+
+{{#if error}}
+<div class="alert alert-danger alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+        &times;
+    </button>
+    {{error}}
+</div>
+{{/if}}
+
+{{#if success}}
+<div class="alert alert-success alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+        &times;
+    </button>
+    {{success}}
+</div>
+{{/if}}
+
+{{#each data}}
+ <table class="table table-striped">
+        <caption>基本的表格布局</caption>
+        <thead>
+            <tr>
+                <th>_id</th>
+                <th>user_id</th>
+                <th>date</th>
+                <th>post</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{_id}}</td>
+                <td>{{user_id}}</td>
+                <td>{{date}}</td>
+                <td>{{post}}</td>
+            </tr>
+        </tbody>
+    </table>
+{{/each}}

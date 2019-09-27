@@ -1,0 +1,14 @@
+<h1>{{msg}}</h1>
+<div class="col-sm-offset-2 col-sm-10">
+    <div class="col-sm-offset-2 col-sm-10">
+
+        {{#if error}}
+        <button type="button" class="btn" onclick="window. history.back()">返回</button>
+        {{/if}}
+
+        {{#if success}}
+        <a class="btn btn-primary" href="/login">登录</button>
+        {{/if}}
+    </div>
+</div>
+

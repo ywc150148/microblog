@@ -1,0 +1,55 @@
+<div class="page-header">
+    <h1>用户信息</h1>
+</div>
+<div class="table-responsive">
+
+
+    {{#if data}}
+    <table class="table table-striped">
+        {{!-- <caption>基本的表格布局</caption> --}}
+        <thead>
+            <tr>
+                <th>_id</th>
+                <th>name</th>
+                <th>password</th>
+                <th>上次登录时间</th>
+                {{!-- <th>最近登录</th> --}}
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{data._id}}</td>
+                <td>{{data.name}}</td>
+                <td>{{data.password}}</td>
+                <td>{{data.lastLogin}}</td>
+                {{!-- <td>{{data.latestlogin}}</td> --}}
+                <td>
+                    <a type="button" class="btn btn-info" href="/modifyinfo">修改密码</a>
+                    <a type="button" class="btn btn-warning" href="/logout">登出</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    {{else}}
+    <div class="alert alert-info">没有查询到用户信息。</div>
+    {{/if}}
+
+</div>
+{{#if error}}
+<div class="alert alert-danger alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+        &times;
+    </button>
+    {{error}}
+</div>
+{{/if}}
+
+{{#if success}}
+<div class="alert alert-success alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+        &times;
+    </button>
+    {{success}}
+</div>
+{{/if}}
